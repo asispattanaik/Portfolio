@@ -12,21 +12,26 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Capture form data
-$fullname = $_POST['fullname'];
-$email = $_POST['email'];
-$mobile = $_POST['mobile'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
+// Check if form submitted via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Capture form data safely
+    $fullname = $conn->real_escape_string($_POST['fullname']);
+    $email = $conn->real_escape_string($_POST['email']);
+    $mobile = $conn->real_escape_string($_POST['mobile']);
+    $subject = $conn->real_escape_string($_POST['subject']);
+    $message = $conn->real_escape_string($_POST['message']);
 
-// Insert into database
-$sql = "INSERT INTO contact_messages (fullname, email, mobile, subject, message)
-VALUES ('$fullname', '$email', '$mobile', '$subject', '$message')";
+    // Insert into database using prepared statement
+    $stmt = $conn->prepare("INSERT INTO contact_messages (fullname, email, mobile, subject, message) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $fullname, $email, $mobile, $subject, $message);
 
-if ($conn->query($sql) === TRUE) {
-  echo "Message sent successfully!";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($stmt->execute()) {
+        echo "Message sent successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
 }
 
 $conn->close();
