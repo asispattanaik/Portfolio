@@ -1,28 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio Website</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Asis Pattanaik</title>
+
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+:root{
+--bg:#06142d;
+--sec:#010814;
+--main:#0ef;
+--text:#fff;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+}
+
+.heading{
+text-align:center;
+font-size:3.5rem;
+margin-bottom:3rem;
+}
+
+.contact{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.contact-card{
+background:var(--sec);
+padding:4rem 5rem;
+border-radius:2rem;
+text-align:center;
+box-shadow:0 0 20px #14121c;
+transition:.4s ease;
+}
+
+.contact-card:hover{
+transform:translateY(-10px);
+border:2px solid var(--main);
+}
+
+.contact-card h3{
+font-size:2.5rem;
+margin-bottom:2rem;
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+gap:1rem;
+font-size:1.6rem;
+margin:1.5rem 0;
+cursor:pointer;
+color:white;
+transition:.3s;
+}
+
+.contact-item i{
+font-size:2.2rem;
+color:var(--main);
+}
+
+.contact-item:hover{
+color:var(--main);
+transform:translateX(5px);
+}
+
+.linkedin-btn{
+display:inline-block;
+margin-top:2rem;
+padding:1rem 2.5rem;
+border-radius:3rem;
+background:var(--main);
+color:black;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.linkedin-btn:hover{
+box-shadow:0 0 15px var(--main);
+}
+
+#copy-msg{
+margin-top:1.5rem;
+color:var(--main);
+display:none;
+font-size:1.4rem;
+}
+
+</style>
 </head>
+
 <body>
-  <!-- contact section design -->
-  <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me!</span></h2>
-    <form action="conn.php" method="POST">
-      <div class="input-box">
-        <input type="text" name="fullname" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-      </div>
-      <div class="input-box">
-        <input type="number" name="mobile" placeholder="Mobile Number" required>
-        <input type="text" name="subject" placeholder="Email Subject" required>
-      </div>
-      <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-      <input type="submit" value="Send Message" class="btn">
-    </form>
-  </section>
+
+<section class="contact" id="contact">
+<h2 class="heading">Contact <span style="color:#0ef">Me</span></h2>
+
+<div class="contact-card">
+
+<h3>ASIS PATTANAIK</h3>
+
+<!-- Email (click = copy) -->
+<div class="contact-item" onclick="copyText('asispattanaik11@gmail.com')">
+<i class='bx bx-envelope'></i>
+<span>Email: asispattanaik11@gmail.com</span>
+</div>
+
+<!-- Phone (click = copy) -->
+<div class="contact-item" onclick="copyText('+91XXXXXXXXXX')">
+<i class='bx bx-phone'></i>
+<span>Phone: +91 7790003523</span>
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/917790003523" target="_blank" class="contact-item">
+<i class='bx bxl-whatsapp'></i>
+<span>Chat on WhatsApp</span>
+</a>
+
+<!-- Gmail -->
+<a href="mailto:asispattanaik11@gmail.com" class="contact-item">
+<i class='bx bxl-gmail'></i>
+<span>Send Email</span>
+</a>
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/in/pattanaik-asis/" target="_blank" class="linkedin-btn">
+<i class='bx bxl-linkedin'></i> LinkedIn Profile
+</a>
+
+<p id="copy-msg">Copied!</p>
+
+</div>
+</section>
+
+<script>
+function copyText(text){
+navigator.clipboard.writeText(text);
+const msg=document.getElementById("copy-msg");
+msg.style.display="block";
+setTimeout(()=>{msg.style.display="none"},1500);
+}
+</script>
+
 </body>
 </html>
