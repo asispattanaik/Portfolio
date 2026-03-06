@@ -161,6 +161,12 @@ transform:translateY(100%);transition:.5s
 
 .portfolio-box:hover .portfolio-layer{transform:translateY(0)}
 
+video {
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+
 /* CERTIFICATIONS */
 .certification-container{
 display:grid;grid-template-columns:repeat(3,1fr);gap:2rem
