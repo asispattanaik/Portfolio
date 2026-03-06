@@ -220,11 +220,20 @@ I'm a Data Analytics and Web Designer enthusiast with over 1 year of experience 
 </div>
 
 
- <video width="600" controls>
-  <source src="HRMs.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="600" height="340"
+src="Hrms.mp4"
+title="Project"
+frameborder="0"
+allowfullscreen>
+</iframe>
 
+<button onclick="playVideo()">Play Project</button>
+
+<script>
+function playVideo() {
+  document.getElementById("myVideo").play();
+}
+</script>
 
     <!-- Certifications -->
      <section class="portfolio" id="portfolio">
