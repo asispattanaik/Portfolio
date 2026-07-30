@@ -1,1 +1,62 @@
 
+/* Updated responsive CSS enhancements */
+.services-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+gap:3rem;
+margin-top:4rem;
+align-items:stretch;
+}
+.home-content h1{font-size:6.8rem;font-weight:700;line-height:1.2;}
+.home-content h3{font-size:3.4rem;margin-bottom:1rem;}
+.home-content p{font-size:1.9rem;line-height:1.8;margin:2rem 0;}
+.about-content h2{font-size:5rem;margin-bottom:2rem;}
+.about-content h3{font-size:3rem;margin-bottom:2rem;}
+.about-content p{font-size:1.8rem;line-height:1.9;}
+.heading{text-align:center;font-size:5rem;margin-bottom:5rem;}
+.skill-card{padding:2.5rem;font-size:1.8rem;font-weight:500;}
+.skill-card i{font-size:4rem;margin-bottom:1rem;}
+.soft-skill-box span{font-size:1.8rem;font-weight:500;}
+.services-box{
+background:var(--second-bg-color);
+padding:3rem;
+border-radius:2rem;
+border:2px solid transparent;
+transition:.4s;
+text-align:left;
+}
+.services-box h3{font-size:3rem;margin-bottom:2rem;}
+.services-box p{font-size:1.7rem;line-height:1.9;}
+.services-box:hover{border-color:var(--main-color);transform:translateY(-10px);box-shadow:0 0 20px rgba(0,238,255,.25);}
+.portfolio-layer h4{font-size:2.6rem;}
+.portfolio-layer p{font-size:1.6rem;line-height:1.6;}
+.footer{font-size:1.7rem;}
+.btn{
+display:inline-block;
+padding:1.3rem 3.8rem;
+font-size:1.8rem;
+font-weight:600;
+background:var(--main-color);
+color:#000;
+border-radius:50px;
+transition:.4s;
+}
+.btn:hover{box-shadow:0 0 20px var(--main-color);transform:translateY(-3px);}
+@media(max-width:991px){
+html{font-size:60%;}
+.home-content h1{font-size:5.8rem;}
+.home-content h3{font-size:2.8rem;}
+.heading{font-size:4.5rem;}
+}
+@media(max-width:768px){
+html{font-size:57%;}
+.home-content h1{font-size:4.8rem;}
+.home-content h3{font-size:2.5rem;}
+.home-content p{font-size:1.7rem;}
+}
+@media(max-width:480px){
+html{font-size:55%;}
+.home-content h1{font-size:4rem;}
+.home-content h3{font-size:2.2rem;}
+.heading{font-size:3.8rem;}
+}
