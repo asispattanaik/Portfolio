@@ -125,20 +125,7 @@ transition:.3s;
 .soft-bar{height:12px;background:#000;border-radius:20px;overflow:hidden;}
 .soft-bar span{display:block;height:100%;background:var(--main-color);}
 
-.services-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:2rem;
-}
-.services-box{
-background:var(--second-bg-color);
-padding:3rem;
-border-radius:2rem;
-text-align:center;
-transition:.3s;
-}
-.services-box:hover{transform:translateY(-8px);border:2px solid var(--main-color);}
-
+/* SERVICES */ .services-container{ display:flex;flex-wrap:wrap;gap:3rem;justify-content:center;max-width:1200px;margin:auto } .services-box{ width:1380px;min-height:120px;padding:4rem 3rem;text-align:center; background:var(--second-bg-color);border-radius:2rem; transition:.4s;border:2px solid transparent } .services-box:hover{ transform:translateY(-10px); border-color:var(--main-color) }
 .portfolio{background:var(--second-bg-color);}
 .portfolio-container,
 .certification-container{
