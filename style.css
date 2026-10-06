@@ -257,6 +257,42 @@ transform:translateY(-6px)
 .cert-box img:hover{
     transform:scale(1.05);
 }
+/* CERTIFICATIONS */
+.recognition-container{
+display:grid;grid-template-columns:repeat(3,1fr);gap:2rem
+}
+
+.cert-box{
+background:var(--bg-color);padding:2rem;border-radius:2rem;text-align:center;
+transition:.4s;border:2px solid transparent
+}
+
+.cert-box:hover{
+border-color:var(--main-color);
+transform:translateY(-6px)
+}
+
+.cert-box:hover img{
+    transform:scale(1.05);
+}
+
+.cert-box h4{
+    font-size:1.6rem;
+    margin-top:.5rem;
+}
+.cert-box img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:1.2rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cert-box img:hover{
+    transform:scale(1.05);
+}
+
 
 /* Modal */
 
